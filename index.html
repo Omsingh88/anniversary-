@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Anniversary Bhaturii ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#ffe9f3, #fff6f0);
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      padding: 2rem;
+    }
+    .button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 1rem;
+    }
+    .button:hover {
+      background: #e754a3;
+    }
+    .note, .surprise {
+      display: none;
+      margin-top: 2rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .timeline {
+      margin: 2rem auto;
+      max-width: 600px;
+      text-align: left;
+    }
+    .timeline p {
+      background: #fff;
+      border-left: 5px solid #ff69b4;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+    }
+    iframe {
+      margin-top: 2rem;
+      border-radius: 20px;
+    }
+    .gallery {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .gallery img {
+      max-width: 180px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hey Bhaturii 💖</h1>
+    <p>Someone special left you a surprise note today!</p>
+    <button class="button" onclick="revealNote()">Click Me, Bhaturii!</button>
+
+    <div class="note" id="note">
+      <h2>Happy 1st Anniversary 🎉</h2>
+      <p>
+        From our first laugh to all the silly fights, late-night talks, and endless teasing — it's been a year filled with love, madness, and magic. Even if we’re in different cities today, I’m holding your heart close to mine. ❤️
+      </p>
+
+      <div class="timeline">
+        <h3>🌟 Our Little Love Timeline</h3>
+        <p>💬 First chat: Destiny said hello.</p>
+        <p>😂 Inside jokes: 1,000+ and counting.</p>
+        <p>🎧 Shared songs: Too many to list.</p>
+        <p>❤️ Nicknames: Bhaturaa & Bhaturii — perfect duo.</p>
+        <p>📆 365 days of us, and forever to go.</p>
+      </div>
+
+      <div class="gallery">
+        <img src="images/img1.jpg" alt="Memory 1" />
+        <img src="images/img2.jpg" alt="Memory 2" />
+        <img src="images/img3.jpg" alt="Memory 3" />
+      </div>
+
+      <iframe width="300" height="170"
+        src="https://www.youtube.com/embed/nfWlot6h_JM?autoplay=1&mute=1"
+        title="Love Song" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+
+      <button class="button" onclick="revealSurprise()">Tap for One More Surprise 🎁</button>
+
+      <div class="surprise" id="surprise">
+        <h3>💌 A Final Whisper:</h3>
+        <p>You're not just my girlfriend. You're my favorite person in the world. I love you endlessly, Bhaturii.</p>
+        <p style="font-size: 2rem;">❤️ Bhaturaa</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function revealNote() {
+      document.getElementById('note').style.display = 'block';
+    }
+
+    function revealSurprise() {
+      document.getElementById('surprise').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
