@@ -30,7 +30,7 @@
     .button:hover {
       background: #e754a3;
     }
-    .note, .surprise, .secret {
+    .note, .surprise, .password-section {
       display: none;
       margin-top: 2rem;
       animation: fadeIn 1.5s ease-in;
@@ -68,6 +68,14 @@
     .gallery img:hover {
       transform: scale(1.05);
     }
+    input[type="password"] {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 1rem;
+      width: 200px;
+    }
   </style>
 </head>
 <body>
@@ -97,40 +105,56 @@
         <img src="images/img3.jpg" alt="Memory 3" />
       </div>
 
-      <button class="button" onclick="revealSurprise()">Tap for One More Surprise 🎁</button>
+      <div style="margin-top: 2rem;">
+        <p>Want to hear what my heart sounds like? 💓</p>
+        <button class="button" onclick="playAudio()">Play My Voice 🎧</button>
+        <audio id="myAudio">
+          <source src="audio1.m4a" type="audio/mp4">
+          Your browser does not support the audio tag.
+        </audio>
+      </div>
+
+      <button class="button" onclick="showPasswordBox()">Tap for One More Surprise 🎁</button>
+
+      <div class="password-section" id="passwordBox">
+        <p>Shhh... It's a secret. Enter the password to unlock 💬</p>
+        <input type="password" id="secretInput" placeholder="Enter password..." />
+        <br>
+        <button class="button" onclick="checkPassword()">Unlock 💝</button>
+      </div>
 
       <div class="surprise" id="surprise">
         <h3>💌 A Final Whisper:</h3>
         <p>You're not just my girlfriend. You're my favorite person in the world. I love you endlessly, Bhaturiiii 😘😘😘.</p>
         <p style="font-size: 2rem;"> By Bhaturaa ❤️ Sorry I couldn’t make it more attractive — I did everything on my phone since my office laptop doesn’t support this stuff 😞</p>
       </div>
-
-      <button class="button" onclick="revealSecret()">Unlock My Heart 🔐</button>
-
-      <div class="secret" id="secret">
-        <h3>💖 Secret Message for You</h3>
-        <p>Every time I think of forever, your face is the only one I see. You’re my one true love, Bhaturii. Happy Anniversary, jaan. 💫</p>
-        <p style="font-size:1.8rem;">— Yours, Bhaturaa ❤️</p>
-      </div>
     </div>
   </div>
-
-  <!-- Auto-playing audio -->
-  <audio autoplay loop>
-    <source src="audio1.m4a" type="audio/mp4">
-    Your browser does not support the audio tag.
-  </audio>
 
   <script>
     function revealNote() {
       document.getElementById('note').style.display = 'block';
     }
-    function revealSurprise() {
-      document.getElementById('surprise').style.display = 'block';
+
+    function playAudio() {
+      document.getElementById('myAudio').play();
     }
-    function revealSecret() {
-      document.getElementById('secret').style.display = 'block';
+
+    function showPasswordBox() {
+      document.getElementById('passwordBox').style.display = 'block';
+    }
+
+    function checkPassword() {
+      const input = document.getElementById('secretInput').value.toLowerCase().trim();
+      if (input === "bhaturi") {
+        document.getElementById('surprise').style.display = 'block';
+      } else {
+        alert("Oops! Wrong password 🤫");
+      }
     }
   </script>
 </body>
-</html>
+</html>  
+
+
+      
