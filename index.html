@@ -30,7 +30,7 @@
     .button:hover {
       background: #e754a3;
     }
-    .note, .surprise {
+    .note, .surprise, .secret {
       display: none;
       margin-top: 2rem;
       animation: fadeIn 1.5s ease-in;
@@ -50,10 +50,6 @@
       padding: 1rem;
       margin: 1rem 0;
       border-radius: 10px;
-    }
-    iframe {
-      margin-top: 2rem;
-      border-radius: 20px;
     }
     .gallery {
       margin-top: 2rem;
@@ -101,10 +97,6 @@
         <img src="images/img3.jpg" alt="Memory 3" />
       </div>
 
-      <iframe width="300" height="170"
-        src="https://www.youtube.com/embed/nfWlot6h_JM?autoplay=1&mute=1"
-        title="Love Song" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-
       <button class="button" onclick="revealSurprise()">Tap for One More Surprise 🎁</button>
 
       <div class="surprise" id="surprise">
@@ -112,16 +104,32 @@
         <p>You're not just my girlfriend. You're my favorite person in the world. I love you endlessly, Bhaturiiii 😘😘😘.</p>
         <p style="font-size: 2rem;"> By Bhaturaa ❤️ Sorry I couldn’t make it more attractive — I did everything on my phone since my office laptop doesn’t support this stuff 😞</p>
       </div>
+
+      <button class="button" onclick="revealSecret()">Unlock My Heart 🔐</button>
+
+      <div class="secret" id="secret">
+        <h3>💖 Secret Message for You</h3>
+        <p>Every time I think of forever, your face is the only one I see. You’re my one true love, Bhaturii. Happy Anniversary, jaan. 💫</p>
+        <p style="font-size:1.8rem;">— Yours, Bhaturaa ❤️</p>
+      </div>
     </div>
   </div>
+
+  <!-- Auto-playing audio -->
+  <audio autoplay loop>
+    <source src="audio1.m4a" type="audio/mp4">
+    Your browser does not support the audio tag.
+  </audio>
 
   <script>
     function revealNote() {
       document.getElementById('note').style.display = 'block';
     }
-
     function revealSurprise() {
       document.getElementById('surprise').style.display = 'block';
+    }
+    function revealSecret() {
+      document.getElementById('secret').style.display = 'block';
     }
   </script>
 </body>
